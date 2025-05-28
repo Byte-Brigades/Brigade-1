@@ -8,9 +8,9 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
+      text-align: right;
       margin: 0;
-      background-color: #f4f4f4;
+      background-color:blue;
     }
     .login-container, .dashboard-container {
       background: white;
@@ -21,22 +21,22 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     input, select {
-      width: 100%;
-      padding: 10px;
+      width: 135%;
+      padding: 15px;
       margin: 5px 0;
       border-radius: 5px;
     }
     button {
       width: 100%;
       padding: 10px;
-      background: #28a745;
+      background: #pink;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
     button:hover {
-      background: #218838;
+      background: #f4f4f4;
     }
     ul {
       list-style-type: none;
@@ -58,10 +58,10 @@
   <div class="login-container">
     <form id="loginForm">
       <h2>Student Login</h2>
-      <label for="name">Name:</label>
+      <label for="name">Name:-</label>
       <input type="text" id="name" placeholder="Enter your name" />
 
-      <label for="enrollment">Enrollment Number:</label>
+      <label for="enrollment">Enrollment Number:-</label>
       <input type="text" id="enrollment" placeholder="Enter enrollment number" />
 
       <label for="batch">Course Batch:</label>
@@ -85,21 +85,21 @@
     <p>Batch: <span id="studentBatch"></span></p>
     <p>CGPA: <span id="studentCGPA"></span></p>
 
-    <h3>📌 Registered Semester 1 Courses</h3>
+    <h3> Registered Semester 1 Courses</h3>
     <ul id="courseList"></ul>
 
     <h3>Total Completed Credits: <span id="totalCredits">0</span></h3>
 
-    <h3>📌 Recommended Semester 2 Courses</h3>
+    <h3> Recommended Semester 2 Courses</h3>
     <ul id="recommendedCourses"></ul>
 
-    <h3>📌 Recommended Semester 3 Courses</h3>
+    <h3> Recommended Semester 3 Courses</h3>
     <ul id="sem3Courses"></ul>
 
-    <h3>📌 Discipline Electives</h3>
+    <h3> Discipline Electives</h3>
     <ul id="disciplineElectives"></ul>
 
-    <h3>📌 Open Electives</h3>
+    <h3> Open Electives</h3>
     <ul id="openElectives"></ul>
   </div>
 
@@ -127,25 +127,25 @@
 
       const registeredCourses = {
         "B1-B4": [
-          { name: "Programming in Python", credits: 2 },
-          { name: "Linear Algebra & Calculus", credits: 3 },
-          { name: "Basic French", credits: 2 },
-          { name: "Physics of Opto Devices", credits: 3 },
+          { name: "Programming in Python", credits: 4 },
+          { name: "Linear Algebra & Calculus", credits: 4 },
+          { name: "Basic French", credits: 1 },
+          { name: "Physics of Opto Devices", credits: 5 },
           { name: "Communicative English", credits: 1 },
-          { name: "Environmental Studies", credits: 0 }
+          { name: "Environmental Studies", credits: 1 }
         ],
         "B5": [
-          { name: "Intro to Biotechnology", credits: 3 },
+          { name: "Intro to Biotechnology", credits: 2 },
           { name: "Linear Algebra & Calculus", credits: 3 },
-          { name: "Physics of Opto Devices", credits: 3 },
+          { name: "Physics of Opto Devices", credits: 2 },
           { name: "Communicative English", credits: 1 },
           { name: "Environmental Studies", credits: 0 }
         ],
         "B6-B7": [
-          { name: "Programming in Python", credits: 2 },
-          { name: "Linear Algebra & Calculus", credits: 3 },
+          { name: "Programming in Python", credits: 3 },
+          { name: "Linear Algebra & Calculus", credits: 4 },
           { name: "Communicative English", credits: 1 },
-          { name: "Environmental Studies", credits: 0 },
+          { name: "Environmental Studies", credits: 2 },
           { name: "Understanding Self", credits: 1 },
           { name: "Communicative Kannada", credits: 0 },
           { name: "Physics of Opto Devices", credits: 3 }
@@ -153,9 +153,9 @@
         "B8-B11": [
           { name: "Programming in Python", credits: 2 },
           { name: "Linear Algebra & Calculus", credits: 3 },
-          { name: "Fundamentals of ECE", credits: 3 },
+          { name: "Fundamentals of ECE", credits: 4 },
           { name: "Understanding Self", credits: 1 },
-          { name: "Kannada", credits: 0 },
+          { name: "Kannada", credits: 3 },
           { name: "Tech English Communication", credits: 1 }
         ]
       };
@@ -202,20 +202,20 @@
       sem3Courses.innerHTML = "";
       const sem3List = {
         "B1-B4": [
-          { name: "CSE2001 Data Structures and Algorithms (3:2)", credits: 4 },
-          { name: "CSE3001 Object Oriented System Design (3:1)", credits: 4 }
+          { name: "CSE2001 Data Structures and Algorithms (3:2)", credits: 5 },
+          { name: "CSE3001 Object Oriented System Design (3:1)", credits: 5 }
         ],
         "B5": [
-          { name: "CSE2001 Data Structures and Algorithms (3:2)", credits: 4 },
-          { name: "CSE3001 Object Oriented System Design (3:1)", credits: 4 }
+          { name: "CSE2001 Data Structures and Algorithms (3:2)", credits: 5 },
+          { name: "CSE3001 Object Oriented System Design (3:1)", credits: 5}
         ],
         "B6-B7": [
-          { name: "CSE2001 Data Structures and Algorithms (3:2)", credits: 4 },
-          { name: "CSE3001 Object Oriented System Design (3:1)", credits: 4 }
+          { name: "CSE2001 Data Structures and Algorithms (3:2)", credits:5 },
+          { name: "CSE3001 Object Oriented System Design (3:1)", credits: 5 }
         ],
         "B8-B11": [
-          { name: "CSE2001 Data Structures and Algorithms (3:2)", credits: 4 },
-          { name: "CSE3002 Computer Organization and Architecture (3:1)", credits: 4 }
+          { name: "CSE2001 Data Structures and Algorithms (3:2)", credits: 5 },
+          { name: "CSE3002 Computer Organization and Architecture (3:1)", credits: 5 }
         ]
       };
       sem3List[batch].forEach(course => {
@@ -261,12 +261,12 @@
     .section { margin-bottom: 30px; }
     .courses-container { display: flex; flex-wrap: wrap; gap: 20px; }
     .course-card {
-      background: #fff;
+      background: #f4f4f4;
       padding: 15px;
       border: 1px solid #ccc;
       border-radius: 10px;
       width: 240px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
     }
     button {
       margin: 5px 5px 0 0;
@@ -404,6 +404,52 @@
 </form>
 </html>
 </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8e8c0;
+            text-align: center;
+        }
+        .menu {
+            width: 50%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #6d4c41;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h1>Café Menu</h1>
+        <div class="item"><span>Espresso</span><span>₹120</span></div>
+        <div class="item"><span>Cappuccino</span><span>₹150</span></div>
+        <div class="item"><span>Latte</span><span>₹160</span></div>
+        <div class="item"><span>Mocha</span><span>₹170</span></div>
+        <div class="item"><span>Green Tea</span><span>₹100</span></div>
+        <div class="item"><span>Pastry</span><span>₹90</span></div>
+    </div>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -555,18 +601,6 @@
                 </div>
                 <div class="price">$3.50</div>
             </div>
-            <div class="menu-item">
-                <div>
-                    <h3>Lemon Iced Tea</h3>
-                    <p>Refreshing iced tea with a hint of lemon.</p>
-                </div>
-                <div class="price">$2.99</div>
-            </div>
-            <div class="menu-item">
-                <div>
-                    <h3>Espresso</h3>
-                    <p>Strong and bold espresso shot.</p>
-                </div>
                 <div class="price">$2.50</div>
             </div>
         </div>
